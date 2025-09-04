@@ -21,7 +21,7 @@ talosconfig
 Thumbs.db
 
 known_hosts
-
+github_known_hosts
 age.key
 cloudflare-tunnel.json
 github-deploy.key
