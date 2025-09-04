@@ -1,0 +1,23 @@
+---
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+version: '3'
+
+tasks:
+  upgrade-k8s:
+    desc: Upgrade Kubernetes
+    dir: '{{.IONOS_DIR}}'
+    cmd: ionosctl k8s upgrade --to '{{.KUBERNETES_VERSION}}'
+    vars:
+      KUBERNETES_VERSION:
+        sh: yq '.kubernetesVersion' {{.IONOS_DIR}}/ionos.yaml
+    preconditions:
+      - test -f {{.IONOS_CONFIG}}
+      - which ionosctl
+
+  reset:
+    desc: Resets nodes back to maintenance mode
+    dir: '{{.IONOS_DIR}}'
+    prompt: This will destroy your cluster and reset the nodes back to maintenance mode... continue?
+    cmd: ionosctl k8s reset --reboot {{- if eq .CLI_FORCE false }} --system-labels-to-wipe STATE --system-labels-to-wipe EPHEMERAL{{ end }} --graceful=false --wait=false
+    preconditions:
+      - which ionosctl

@@ -5,11 +5,8 @@ kind: Kustomization
 namespace: kube-system
 components:
   - ../../components/common
-# resources:
-#   - ./metrics-server/ks.yaml
-#   - ./reloader/ks.yaml
-#   - ./spegel/ks.yaml
-#   - ./descheduler/ks.yaml
-#   - ./kube-bench/ks.yaml
-#   - ./kubelet-csr-approver/ks.yaml
-#   - ./reflector/ks.yaml
+resources:
+  - ./metrics-server/ks.yaml
+  - ./reloader/ks.yaml
+  - ./spegel/ks.yaml
+

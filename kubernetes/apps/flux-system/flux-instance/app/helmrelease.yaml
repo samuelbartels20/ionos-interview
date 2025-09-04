@@ -48,8 +48,7 @@ spec:
         - notification-controller
       sync:
         kind: GitRepository
-
-        url: "ssh://git@github.com/samuelbartels20/ionos-k8s.git"
+        url: "ssh://git@github.com/samuelbartels20/ionos-interview.git"
         pullSecret: github-deploy-key
         ref: "refs/heads/main"
         path: kubernetes/flux/cluster

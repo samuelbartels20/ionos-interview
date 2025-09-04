@@ -1,4 +1,4 @@
-
+#% if spegel_enabled %#
 ---
 # yaml-language-server: $schema=https://raw.githubusercontent.com/fluxcd-community/flux2-schemas/main/ocirepository-source-v1.json
 apiVersion: source.toolkit.fluxcd.io/v1
@@ -31,6 +31,15 @@ spec:
     cleanupOnFail: true
     remediation:
       retries: 3
-  valuesFrom:
-    - kind: ConfigMap
-      name: spegel-values
+  values:
+    spegel:
+      containerdSock: /run/containerd/containerd.sock
+      containerdRegistryConfigPath: /etc/cri/conf.d/hosts
+    service:
+      registry:
+        hostPort: 29999
+    serviceMonitor:
+      enabled: true
+    grafanaDashboard:
+      enabled: true
+#% endif %#

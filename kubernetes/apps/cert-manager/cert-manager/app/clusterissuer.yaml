@@ -16,4 +16,4 @@ spec:
               name: cert-manager-secret
               key: api-token
         selector:
-          dnsZones: ["samcloud.online"]
+          dnsZones: ["${SECRET_DOMAIN}"]
