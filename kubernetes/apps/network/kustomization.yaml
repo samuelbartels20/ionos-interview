@@ -5,7 +5,7 @@ kind: Kustomization
 namespace: network
 components:
   - ../../components/common
-resources:
+# resources:
   # - ./cloudflare-dns/ks.yaml
   # - ./cloudflare-tunnel/ks.yaml
-  - ./k8s-gateway/ks.yaml
+  # - ./k8s-gateway/ks.yaml
