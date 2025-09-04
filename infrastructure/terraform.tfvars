@@ -15,7 +15,7 @@ cluster_name          = "ionos-k8s"
 kubernetes_version    = "1.32.6"
 maintenance_day       = "Sunday"
 maintenance_time      = "10:00:00"
-api_subnet_allow_list = ["154.161.234.70/32"]
+api_subnet_allow_list = ["154.161.97.168/32"]
 
 region = "us-east-1"
 
