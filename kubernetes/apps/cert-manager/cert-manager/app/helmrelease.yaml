@@ -24,6 +24,7 @@ spec:
     kind: OCIRepository
     name: cert-manager
   install:
+    crds: CreateReplace
     remediation:
       retries: -1
   upgrade:
