@@ -10,6 +10,7 @@ resources:
   - ./loki/ks.yaml
   - ./grafana/ks.yaml
   - ./alloy/ks.yaml
+  - ./blackbox-exporter/ks.yaml
 
 
 
