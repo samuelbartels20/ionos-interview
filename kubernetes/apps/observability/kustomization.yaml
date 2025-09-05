@@ -1,0 +1,14 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: observability
+components:
+  - ../../components/common
+# All observability resources disabled until Prometheus CRDs are ready
+resources:
+  - ./kube-prometheus-stack/ks.yaml
+
+
+
+
+
