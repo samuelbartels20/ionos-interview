@@ -13,7 +13,7 @@ spec:
   #   - ../../../../components/volsync
   # dependsOn:
   #   - name: volsync
-  #     namespace: volsync-system
+  #     namespace: storage
   decryption:
     provider: sops
     secretRef:
