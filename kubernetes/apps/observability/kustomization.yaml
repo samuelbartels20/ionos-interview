@@ -8,6 +8,7 @@ components:
 resources:
   - ./kube-prometheus-stack/ks.yaml
   - ./loki/ks.yaml
+  - ./grafana/ks.yaml
 
 
 
