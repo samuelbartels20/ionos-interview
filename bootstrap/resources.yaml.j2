@@ -1,0 +1,47 @@
+{% for namespace in ["external-secrets", "flux-system", "network", "observability"] %}
+
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ namespace }}
+{% endfor %}
+
+
+
+
+# 1password secret
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: onepassword-secret
+  namespace: security
+stringData:
+  token: op://K8s/1password-token/password
+  1password-credentials.json: op://K8s/1password-json/1password-credentials.json
+
+
+# alertmanager secret
+---
+apiVersion: v1
+kind: Secret
+metadata:
+    name: alertmanager-secret
+    namespace: observability
+stringData:
+    ALERTMANAGER_PUSHOVER_TOKEN: op://K8s/ALERTMANAGER_PUSHOVER_TOKEN/ALERTMANAGER_PUSHOVER_TOKEN
+    PUSHOVER_USER_KEY: op://K8s/PUSHOVER_USER_KEY/PUSHOVER_USER_KEY
+
+
+# grafana secret
+---
+apiVersion: v1
+kind: Secret
+metadata:
+    name: grafana
+    namespace: observability
+stringData:
+    admin-user: "{{ .admin_user }}"
+    admin-password: "{{ .admin_password }}"
+

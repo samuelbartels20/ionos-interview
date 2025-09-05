@@ -1,0 +1,35 @@
+mariadb:
+  enabled: false
+externalDatabase:
+  host: ma-c2l5k0mgcej7h3ip.mariadb.de-fra.ionos.com
+  port: 3306
+  user: ionos
+  database: mariadb
+  password: Ionos.20@123
+# WordPress Settings
+wordpressUsername: ionos
+wordpressPassword: Ionos.20@123
+wordpressEmail: bartelssamuel20@gmail.com
+persistence:
+  enabled: true
+  accessModes:
+    - ReadWriteOnce
+  size: 20Gi
+  storageClass: ionos-enterprise-ssd
+# Service Exposure
+service:
+  type: LoadBalancer
+  port: 80
+  annotations:
+    service.beta.kubernetes.io/ionoscloud-loadbalancer-protocol: HTTP
+# Networking
+networkPolicy:
+  enabled: true
+# Resources
+resources:
+  requests:
+    memory: 512Mi
+    cpu: 500m
+  limits:
+    memory: 1Gi
+    cpu: 1000m
