@@ -7,6 +7,7 @@ components:
 # All observability resources disabled until Prometheus CRDs are ready
 resources:
   - ./kube-prometheus-stack/ks.yaml
+  - ./loki/ks.yaml
 
 
 
