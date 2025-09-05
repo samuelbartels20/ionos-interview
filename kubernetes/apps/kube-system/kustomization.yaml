@@ -8,6 +8,6 @@ components:
 resources:
   - ./metrics-server/ks.yaml
   - ./reloader/ks.yaml
-  - ./spegel/ks.yaml
+  # - ./spegel/ks.yaml
 
 
