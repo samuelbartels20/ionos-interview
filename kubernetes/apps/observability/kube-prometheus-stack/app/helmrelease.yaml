@@ -4,6 +4,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: kube-prometheus-stack
+  namespace: observability
 spec:
   interval: 1h
   chartRef:
@@ -25,8 +26,8 @@ spec:
           hostnames:
             - alertmanager.samcloud.online
           parentRefs:
-            - name: internal
-              namespace: kube-system
+            - name: external
+              namespace: observability
               sectionName: https
       alertmanagerSpec:
         alertmanagerConfiguration:
@@ -37,7 +38,7 @@ spec:
         storage:
           volumeClaimTemplate:
             spec:
-              storageClassName: ceph-block
+              storageClassName: ionos-enterprise-ssd
               resources:
                 requests:
                   storage: 1Gi
@@ -73,7 +74,7 @@ spec:
         scrapeConfigSelectorNilUsesHelmValues: false
         serviceMonitorSelectorNilUsesHelmValues: false
         retention: 14d
-        retentionSize: 5Gi
+        retentionSize: 5GB
         resources:
           requests:
             cpu: 100m
