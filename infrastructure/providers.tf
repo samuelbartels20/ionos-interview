@@ -42,7 +42,7 @@ terraform {
     # AWS Provider
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 6.11.0"
+      version = "~> 6.31.0"
     }
 
   }
