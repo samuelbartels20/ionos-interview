@@ -7,7 +7,7 @@ IONOSCONFIG = "{{config_root}}/ionos/clusterconfig/ionosconfig"
 [tools]
 "python" = "3.14.3"
 "pipx:makejinja" = "2.8.2"
-"aqua:budimanjojo/talhelper" = "3.1.4"
+"aqua:budimanjojo/talhelper" = "3.1.5"
 "aqua:cli/cli" = "2.86.0"
 "aqua:cloudflare/cloudflared" = "2025.11.1"
 "aqua:cue-lang/cue" = "0.15.4"
