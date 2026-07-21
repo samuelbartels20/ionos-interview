@@ -203,7 +203,7 @@ jobs:
 
       - name: Post PR comment
         continue-on-error: false
-        uses: borchero/terraform-plan-comment@9c18ac901b5d2b58e9cbd9d1480af36e28ffaf88 # v2.6.1
+        uses: borchero/terraform-plan-comment@2d41e908725447b1677913001dfb92fa7010c025 # v3.1.0
         with:
           token: ${{ secrets.TOKEN }}
           planfile: .planfile
